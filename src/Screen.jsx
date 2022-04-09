@@ -1,14 +1,17 @@
-import * as THREE from "three";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import "./Screen.css";
-import { useRef } from "react";
+import { GameContextProvider, useGameContext } from "./context/gameContext";
+import { Canvas } from "@react-three/fiber";
 import GameScene from "./components/GameScene";
+import "./Screen.css";
 
 export default function Screen() {
+  const teste = useGameContext();
+  console.log(teste);
+
   return (
     <Canvas>
-      <GameScene />
+      <GameContextProvider>
+        <GameScene />
+      </GameContextProvider>
     </Canvas>
   );
 }
-
