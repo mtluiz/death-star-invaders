@@ -10,7 +10,7 @@ export default function Box(props) {
 
   useFrame((state, delta) => {
     ref.current.rotation.x += 0.1;
-    ref.current.position.y = -3;
+    ref.current.position.y = -6;
     ref.current.position.x = props.playerPosition.x;
   });
   return (
