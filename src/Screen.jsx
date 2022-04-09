@@ -4,8 +4,6 @@ import GameScene from "./components/GameScene";
 import "./Screen.css";
 
 export default function Screen() {
-  const teste = useGameContext();
-  console.log(teste);
 
   return (
     <Canvas>
