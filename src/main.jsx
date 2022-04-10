@@ -1,4 +1,3 @@
-import React from "react";
 import Screen from "./Screen";
 import { createRoot } from "react-dom/client";
 import "./Screen.css";
