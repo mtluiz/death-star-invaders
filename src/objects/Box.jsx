@@ -1,20 +1,21 @@
-import * as THREE from "three";
-import {useFrame} from "@react-three/fiber";
-import { useRef } from "react";
+import { Suspense } from "react";
+import { useLoader, useThree } from "@react-three/fiber";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-export default function Box(props) {
-  const ref = useRef(null);
+export default function Box({playerPosition}) {
+  const tie = useLoader(
+    GLTFLoader,
+    "./src/assets/3d-models/millenium-falcom/scene.gltf"
+  );
 
-  
-
-  useFrame((state, delta) => {
-    ref.current.rotation.x += 0.1;
-    ref.current.position.y = -3;
-  });
   return (
-    <mesh {...props} ref={ref}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshBasicMaterial color="red" />
-    </mesh>
+    <Suspense fallback={null}>
+      <primitive
+        object={tie.scene}
+        scale={0.0032}
+        position={[playerPosition.x, 0, 5]}
+        rotation={[0, Math.PI, 0]}
+      />
+    </Suspense>
   );
 }
