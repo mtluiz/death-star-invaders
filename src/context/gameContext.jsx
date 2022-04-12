@@ -2,7 +2,7 @@ import { createContext, useState, useContext } from "react";
 
 const GameContext = createContext();
 
-const GameContextProvider = ({children}) => {
+const GameContextProvider = ({ children }) => {
 
   const [playerPosition, setPlayerPosition] = useState({ x: 0 });
 
@@ -19,9 +19,29 @@ const GameContextProvider = ({children}) => {
     }
   });
 
+  const [enemyPosition, setEnemyPosition] = useState({ x: -7, y: -6 });
+
+  window.addEventListener("keypress", (e) => {
+    if (e.key == "z") {
+
+      for (let eixoy = -6; eixoy < 6; eixoy++) {
+        for (let eixox = -7; eixox < 7; eixox++) {
+          //setTimeout(() => {
+            setEnemyPosition({x: enemyPosition.x++})
+            console.log(eixoy, eixox, enemyPosition)  
+          //}, 3000)
+        }
+        setEnemyPosition({y: enemyPosition.y++})
+        setEnemyPosition({x: -7});
+      }
+    }
+  });
+
   const value = {
     playerPosition,
-    setPlayerPosition
+    setPlayerPosition,
+    enemyPosition,
+    setEnemyPosition
   }
 
   return (

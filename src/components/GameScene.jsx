@@ -7,7 +7,7 @@ import MilleniumFalcon from "../objects/MilleniumFalcon";
 import Box from "../objects/Box";
 
 const GameScene = () => {
-  const { playerPosition, setPlayerPosition } = useGameContext();
+  const { playerPosition, setPlayerPosition, enemyPosition, setEnemyPosition } = useGameContext();
 
   useThree(({ camera }) => {
     camera.position.z = 0;
@@ -20,7 +20,7 @@ const GameScene = () => {
       <ambientLight color={0xaaaaaa} />
       <gridHelper args={[20, 20, 20]} />
       <MilleniumFalcon playerPosition={playerPosition} />
-      <TieFighter/>
+      <TieFighter enemyPosition={enemyPosition}/>
     </>
   );
 };
