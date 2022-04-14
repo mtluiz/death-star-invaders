@@ -8,40 +8,20 @@ const GameContextProvider = ({ children }) => {
 
   window.addEventListener("keypress", (e) => {
     if (e.key == "a") {
-      if (playerPosition.x > -10)
-        setPlayerPosition({ x: playerPosition.x - 1 });
+      if (playerPosition.x > -10){
+         setPlayerPosition({ x: playerPosition.x - 0.5 });
+      }
     }
-  });
 
-  window.addEventListener("keypress", (e) => {
+
     if (e.key == "d") {
       if (playerPosition.x < 10) setPlayerPosition({ x: playerPosition.x + 1 });
-    }
-  });
-
-  const [enemyPosition, setEnemyPosition] = useState({ x: -7, y: -6 });
-
-  window.addEventListener("keypress", (e) => {
-    if (e.key == "z") {
-
-      for (let eixoy = -6; eixoy < 6; eixoy++) {
-        for (let eixox = -7; eixox < 7; eixox++) {
-          //setTimeout(() => {
-            setEnemyPosition({x: enemyPosition.x++})
-            console.log(eixoy, eixox, enemyPosition)  
-          //}, 3000)
-        }
-        setEnemyPosition({y: enemyPosition.y++})
-        setEnemyPosition({x: -7});
-      }
     }
   });
 
   const value = {
     playerPosition,
     setPlayerPosition,
-    enemyPosition,
-    setEnemyPosition
   }
 
   return (

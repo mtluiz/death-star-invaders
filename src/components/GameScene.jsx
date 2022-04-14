@@ -4,7 +4,7 @@ import { useGameContext } from "../context/gameContext";
 import { Suspense, useRef } from "react";
 import TieFighter from "../objects/TieFighter";
 import MilleniumFalcon from "../objects/MilleniumFalcon";
-import Box from "../objects/Box";
+import Shot from "../objects/Shot";
 
 const GameScene = () => {
   const { playerPosition, setPlayerPosition, enemyPosition, setEnemyPosition } = useGameContext();
@@ -19,6 +19,7 @@ const GameScene = () => {
     <>
       <ambientLight color={0xaaaaaa} />
       <gridHelper args={[20, 20, 20]} />
+      <Shot />
       <MilleniumFalcon playerPosition={playerPosition} />
       <TieFighter enemyPosition={enemyPosition}/>
     </>
