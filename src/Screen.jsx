@@ -11,11 +11,10 @@ export default function Screen() {
 
   window.addEventListener("keypress", (e) => {
 
-    if (e.key == "f") {
+    if (e.key == " ") {
       shot.current.currentTime = 0
       shot.current.volume = 0.3
       shot.current.play()
-      console.log("tiro")
     }
   })
 

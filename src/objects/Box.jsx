@@ -4,15 +4,15 @@ import { useRef } from "react";
 import { useGameContext } from "../context/gameContext";
 
 export default function Box(props) {
-  const teste = useGameContext()
-  console.log(props.playerPosition.x) 
-  const ref = useRef(null);
 
+  const ref = useRef(null);
   useFrame((state, delta) => {
-    ref.current.rotation.x += 0.1;
+    ref.current.rotation.x += 1;
     ref.current.position.y = -6;
-    ref.current.position.x = props.playerPosition.x;
+    ref.current.position.x = 0;
   });
+
+
   return (
     <mesh {...props} ref={ref}>
       <boxGeometry args={[1, 1, 1]} />
