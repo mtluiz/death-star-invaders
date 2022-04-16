@@ -14,3 +14,21 @@
   padding: 0;
 
 }
+
+.start-menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.start-menu img{
+  width: 50%;
+}
+
+.start-menu h1{
+  font-size: 150%;
+  margin-top: 20%;
+  color: white;
+}
