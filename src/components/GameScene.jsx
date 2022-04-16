@@ -10,9 +10,9 @@ const GameScene = () => {
   const { playerPosition, setPlayerPosition, enemyPosition, setEnemyPosition } = useGameContext();
 
   useThree(({ camera }) => {
-    camera.position.z = 0;
-    camera.position.y = 10;
-    camera.rotation.x = -1.55;
+    camera.position.z = 6;
+    camera.position.y = 14;
+    camera.rotation.x = -1.10;
   });
 
   return (
